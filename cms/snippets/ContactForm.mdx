@@ -1,0 +1,19 @@
+export default function ContactForm({ action }) {
+  return (
+    <form className="contact-form" action={action} method="POST">
+      <label>
+        Name
+        <input name="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Interest
+        <input name="interest" />
+      </label>
+      <button type="submit">Send</button>
+    </form>
+  )
+}

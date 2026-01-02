@@ -1,0 +1,22 @@
+export default function SectionGrid({ sections }) {
+  return (
+    <div className="section-grid">
+      {sections.map(section => (
+        <article key={section.title}>
+          <h2>{section.title}</h2>
+          <p>{section.body}</p>
+          {section.cards && (
+            <div className="cards">
+              {section.cards.map(card => (
+                <div key={card.title}>
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+        </article>
+      ))}
+    </div>
+  )
+}

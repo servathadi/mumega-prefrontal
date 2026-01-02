@@ -1,0 +1,25 @@
+---
+title: "Journal"
+description: "Categories and upcoming topics across science, art, music, and cinema."
+categories:
+  - name: "Science"
+    items:
+      - title: "Psychiatry for the public"
+      - title: "Intersectional psychology"
+  - name: "Art & Literature"
+    items:
+      - title: "Storycraft"
+      - title: "Shahnameh readings"
+  - name: "Music"
+    items:
+      - title: "Performance notes"
+  - name: "Cinema"
+    items:
+      - title: "Film analysis"
+language: "fa"
+draft: true
+---
+
+import JournalGrid from '../snippets/JournalGrid.mdx'
+
+<JournalGrid categories={frontmatter.categories} />

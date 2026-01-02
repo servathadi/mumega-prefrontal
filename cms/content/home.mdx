@@ -1,0 +1,33 @@
+---
+title: "Fractal Learning Path"
+description: "Structured ADHD and executive function learning path with daily rituals, critical thinking, and coaching."
+hero:
+  headline: "Train your prefrontal cortex"
+  subheadline: "ADHD, executive function, and rational practice in one pathway."
+  cta: "Start ADHD Path"
+  cta_link: "/offer"
+sections:
+  - title: "Why Prefrontal"
+    body: "Structured tiers of learning anchored in science."
+  - title: "Offerings"
+    cards:
+      - title: "Core ADHD Path"
+        description: "Daily rituals, workspace tuning, cognitive training modules."
+      - title: "Critical Thinking"
+        description: "Film, literature, argument hygiene reinforced by journaling."
+      - title: "Executive Function Clinics"
+        description: "Live study labs, Kaplan reading, and mentorship."
+journal_cta:
+  label: "Browse the journal"
+  link: "/journal"
+language: "fa"
+draft: true
+---
+
+import Hero from '../snippets/Hero.mdx'
+import SectionGrid from '../snippets/SectionGrid.mdx'
+import JournalCTA from '../snippets/JournalCTA.mdx'
+
+<Hero frontmatter={frontmatter} />
+<SectionGrid sections={frontmatter.sections} />
+<JournalCTA {...frontmatter.journal_cta} />

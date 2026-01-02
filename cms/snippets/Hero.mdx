@@ -1,0 +1,9 @@
+export default function Hero({ frontmatter }) {
+  return (
+    <section className="hero">
+      <h1>{frontmatter.hero.headline}</h1>
+      <p>{frontmatter.hero.subheadline}</p>
+      <a className="cta" href={frontmatter.hero.cta_link}>{frontmatter.hero.cta}</a>
+    </section>
+  )
+}

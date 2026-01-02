@@ -1,0 +1,16 @@
+export default function JournalGrid({ categories }) {
+  return (
+    <div className="journal-grid">
+      {categories.map(category => (
+        <section key={category.name}>
+          <h2>{category.name}</h2>
+          <ul>
+            {category.items.map(item => (
+              <li key={item.title}>{item.title}</li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  )
+}

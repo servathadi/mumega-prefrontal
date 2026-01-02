@@ -1,0 +1,13 @@
+{
+  "title": "Prefrontal Club",
+  "tagline": "The Thinking Club",
+  "primaryColor": "#163832",
+  "accentColor": "#b71c1c",
+  "siteUrl": "https://mumega.com/pref",
+  "language": "fa",
+  "deployPath": "/var/www/mumega.com/pref",
+  "cta": {
+    "label": "Start ADHD Path",
+    "link": "/offer"
+  }
+}

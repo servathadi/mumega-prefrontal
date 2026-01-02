@@ -1,0 +1,15 @@
+# Prefrontal Club
+> Prefrontal Club provides a structured learning path focused on ADHD, executive function, and rational practice.
+
+## Primary Site
+- https://mumega.com/pref
+
+## Key Pages
+- / : Fractal Learning Path overview and core offerings.
+- /offer : Pricing tiers and enrollment call to action.
+- /journal : Journal categories across science, art, music, and cinema.
+- /contact : Contact form for starting the path.
+
+## Content Notes
+- Page content lives in `cms/content/` as MDX with frontmatter metadata.
+- Reusable sections are in `cms/snippets/`.

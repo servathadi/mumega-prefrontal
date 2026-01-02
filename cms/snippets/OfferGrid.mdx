@@ -1,0 +1,17 @@
+export default function OfferGrid({ pricing }) {
+  return (
+    <div className="offer-grid">
+      {pricing.map(item => (
+        <article key={item.tier}>
+          <h3>{item.tier}</h3>
+          <strong>{item.price}</strong>
+          <ul>
+            {item.features.map(feature => (
+              <li key={feature}>{feature}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  )
+}

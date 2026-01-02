@@ -1,0 +1,30 @@
+---
+title: "Fractal Learning Path Offer"
+description: "Pricing and tiers for the Fractal Learning Path, from entry to premium coaching."
+cta_label: "Reserve your place"
+cta_link: "https://go.highlevel.com/checkout/prefrontal"
+pricing:
+  - tier: "Entry"
+    price: "$25"
+    features:
+      - "ADHD fundamentals"
+      - "Weekly cognitive check-ins"
+  - tier: "Specialist"
+    price: "$90"
+    features:
+      - "Critical thinking lab"
+      - "Kaplan reading sessions"
+  - tier: "Premium Coaching"
+    price: "$250"
+    features:
+      - "1:1 clarity coaching"
+      - "AI-augmented progress reports"
+language: "fa"
+draft: true
+---
+
+import OfferGrid from '../snippets/OfferGrid.mdx'
+import CTASection from '../snippets/CTASection.mdx'
+
+<OfferGrid pricing={frontmatter.pricing} />
+<CTASection label={frontmatter.cta_label} link={frontmatter.cta_link} />

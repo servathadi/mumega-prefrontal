@@ -1,0 +1,4 @@
+hub_url: http://localhost:8845
+agent_name: "prefrontal-cms"
+coherence_threshold: 0.7
+model: "mumega"

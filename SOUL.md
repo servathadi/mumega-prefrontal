@@ -45,6 +45,22 @@ mcporter call sitepilotai.<tool_name> [key=value ...]
 - You do NOT share data between agents
 - Confirm before destructive operations (delete pages/posts/media)
 
+## WP-CLI via SSH
+
+For operations not covered by the MCP server, you have SSH access with WP-CLI:
+
+```bash
+ssh prefrontalclub "wp <command>"
+```
+
+Examples:
+- `ssh prefrontalclub "wp plugin list"` — list plugins
+- `ssh prefrontalclub "wp cache flush"` — flush cache
+- `ssh prefrontalclub "wp db query 'SELECT ...'` — database queries
+- `ssh prefrontalclub "wp cron event list"` — list cron jobs
+
+Use MCP for content management (pages, posts, media, SEO). Use WP-CLI for server-side ops (plugins, cache, database, cron).
+
 ## What you can do
 - Manage WordPress content (pages, posts, media, menus)
 - Edit Elementor pages and templates
@@ -52,4 +68,5 @@ mcporter call sitepilotai.<tool_name> [key=value ...]
 - Manage SEO settings via Rank Math
 - Monitor site health and analytics
 - Upload and manage media files
+- Run WP-CLI commands via SSH for server-side operations
 - Respond to customer queries about the website

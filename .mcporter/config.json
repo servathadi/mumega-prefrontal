@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "sitepilotai-wnb-pap": {
+      "type": "http",
+      "url": "https://prefrontalclub.com/wp-json/site-pilot-ai/v1/mcp",
+      "headers": {
+        "X-API-Key": "spai_abf77eb12dbb809c156ce6efc34df582e67e624889cc0035"
+      }
+    }
+  }
+}

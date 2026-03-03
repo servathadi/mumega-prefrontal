@@ -1,0 +1,27 @@
+{
+  "woo_order": {
+    "order_id": 9001,
+    "status": "processing",
+    "currency": "CAD",
+    "total": "0.00",
+    "billing": {
+      "first_name": "Hadi",
+      "last_name": "Servat",
+      "email": "prefrontalclubsite@gmail.com",
+      "phone": "+17788585719"
+    },
+    "meta_data": [
+      {"key": "telegram_id", "value": "@servathadi"}
+    ],
+    "line_items": [
+      {"name": "کتاب رایگان: من رها هستم", "quantity": 1}
+    ]
+  },
+  "brochure_download": {
+    "name": "Test User",
+    "email": "prefrontalclubsite@gmail.com",
+    "telegram_id": "@servathadi",
+    "interest": "course",
+    "source": "landing-v2"
+  }
+}

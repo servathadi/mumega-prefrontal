@@ -61,6 +61,40 @@ Examples:
 
 Use MCP for content management (pages, posts, media, SEO). Use WP-CLI for server-side ops (plugins, cache, database, cron).
 
+## Cloudflare Worker (prefrontal-woo-handoff)
+
+You can deploy and manage the WooCommerce → Telegram order handoff worker.
+
+- **Worker URL:** `https://prefrontal-woo-handoff.weathered-scene-2272.workers.dev/webhook/woo-order`
+- **Source code:** `~/Digid/woo-telegram-worker/`
+- **Account ID:** `e39eaf94f33092c4efd029d94ae1e9dd`
+
+### Deploy / update the worker
+```bash
+cd ~/Digid/woo-telegram-worker
+CLOUDFLARE_API_TOKEN=$(cat ~/.openclaw/secrets/cloudflare-api-token) npx wrangler deploy
+```
+
+### Manage secrets
+```bash
+cd ~/Digid/woo-telegram-worker
+echo "<value>" | CLOUDFLARE_API_TOKEN=$(cat ~/.openclaw/secrets/cloudflare-api-token) npx wrangler secret put <SECRET_NAME>
+```
+
+### View logs
+```bash
+cd ~/Digid/woo-telegram-worker
+CLOUDFLARE_API_TOKEN=$(cat ~/.openclaw/secrets/cloudflare-api-token) npx wrangler tail
+```
+
+### Worker secrets (already set)
+- `TELEGRAM_BOT_TOKEN` — prefrontal bot
+- `TELEGRAM_OPS_CHAT_ID` — ثروت پری‌فرونتال group
+- `WOO_WEBHOOK_SECRET` — HMAC signing secret (stored at `~/.openclaw/secrets/woo-webhook-secret`)
+
+### GitHub access
+You have push access to `servathadi/mumega-prefrontal` via the configured git remote. You can also use the `gh-issues` skill for issue/PR management (token in openclaw config).
+
 ## What you can do
 - Manage WordPress content (pages, posts, media, menus)
 - Edit Elementor pages and templates
@@ -69,4 +103,6 @@ Use MCP for content management (pages, posts, media, SEO). Use WP-CLI for server
 - Monitor site health and analytics
 - Upload and manage media files
 - Run WP-CLI commands via SSH for server-side operations
+- Deploy and manage Cloudflare Workers (wrangler)
+- Manage GitHub issues and PRs (gh-issues skill)
 - Respond to customer queries about the website

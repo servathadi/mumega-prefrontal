@@ -47,6 +47,7 @@ WordPress REST API (prefrontalclub.com)
 - `docs/github-issue-templates.md` — issue structure for event/update/improvement workflows
 - `docs/issues-needed-from-team.md` — open questions/blockers for team answers
 - `docs/STATUS-2026-03-03-MVP.md` — execution status, team tasks, and smooth-MVP checklist
+- `docs/MEETING-NOTES-2026-03-03-MVP-SALES.md` — Persian meeting notes and action plan to first real sale
 
 ## Workspace files
 

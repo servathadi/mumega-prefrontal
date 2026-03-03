@@ -1,0 +1,24 @@
+name: Ops Docs CI
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - '.github/workflows/ops-docs-ci.yml'
+  workflow_dispatch:
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Basic docs sanity checks
+        run: |
+          test -f docs/ROADMAP.md
+          test -f docs/event-default-spec-v1.md
+          test -f docs/automation/woo-telegram-order-handoff-v1.md
+          test -f docs/github-issue-templates.md
+          echo "Docs baseline present ✅"

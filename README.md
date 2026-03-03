@@ -39,6 +39,14 @@ WordPress REST API (prefrontalclub.com)
 | CMS | WordPress + Elementor |
 | Host | Hetzner VPS (Helsinki) |
 
+## Operational docs (new)
+
+- `docs/ROADMAP.md` — MVP to automation roadmap
+- `docs/event-default-spec-v1.md` — canonical event ingestion defaults
+- `docs/automation/woo-telegram-order-handoff-v1.md` — payment-to-telegram access handoff
+- `docs/github-issue-templates.md` — issue structure for event/update/improvement workflows
+- `docs/issues-needed-from-team.md` — open questions/blockers for team answers
+
 ## Workspace files
 
 | File | Purpose |

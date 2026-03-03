@@ -61,3 +61,49 @@ Future-ready for Cloudflare automation.
 - [ ] Verify required fields validation
 - [ ] Verify Telegram notification received
 - [ ] Verify admin can mark `Telegram Access Granted`
+
+---
+## Deployed: Cloudflare Worker (prefrontal-woo-handoff)
+
+### Worker Details
+- **Name:** prefrontal-woo-handoff
+- **URL:** `https://prefrontal-woo-handoff.weathered-scene-2272.workers.dev/webhook/woo-order`
+- **Account:** Admin@digid.ca (e39eaf94f33092c4efd029d94ae1e9dd)
+- **Source:** `~/Digid/woo-telegram-worker/`
+
+### Secrets (set via wrangler)
+- `TELEGRAM_BOT_TOKEN` — prefrontal bot
+- `TELEGRAM_OPS_CHAT_ID` — ثروت پری‌فرونتال group (-1002312454051)
+- `WOO_WEBHOOK_SECRET` — HMAC signing secret
+
+### Features
+- HMAC signature validation (SHA-256, base64)
+- Fires on `processing` / `completed` order status only
+- Extracts telegram_id from order meta_data or billing fields
+- HTML-formatted Telegram notification
+- 3 retries with backoff on Telegram failures
+- Flags missing telegram_id clearly
+
+### WooCommerce Setup
+1. WooCommerce → Settings → Advanced → Webhooks → Add webhook
+2. Topic: Order created
+3. Delivery URL: `https://prefrontal-woo-handoff.weathered-scene-2272.workers.dev/webhook/woo-order`
+4. Secret: (stored in Cloudflare worker secrets as WOO_WEBHOOK_SECRET)
+5. API Version: v3
+
+### Deploy/Update
+```bash
+cd ~/Digid/woo-telegram-worker
+CLOUDFLARE_API_TOKEN=<token> npx wrangler deploy
+```
+
+### Test
+```bash
+PAYLOAD='{"id":1001,"status":"processing","total":"299000","currency":"IRR","billing":{"first_name":"Test","last_name":"User","email":"test@example.com","phone":"+989121234567"},"meta_data":[{"key":"telegram_id","value":"@testuser123"}],"line_items":[{"name":"Test Course"}]}'
+SECRET="<WOO_WEBHOOK_SECRET>"
+SIGNATURE=$(echo -n "$PAYLOAD" | openssl dgst -sha256 -hmac "$SECRET" -binary | base64)
+curl -s -X POST "https://prefrontal-woo-handoff.weathered-scene-2272.workers.dev/webhook/woo-order" \
+  -H "Content-Type: application/json" \
+  -H "x-wc-webhook-signature: $SIGNATURE" \
+  -d "$PAYLOAD"
+```

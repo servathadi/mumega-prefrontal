@@ -13,7 +13,7 @@ Mirror Telegram operations into WordPress reliably, monetize courses through Woo
 1. Remove/archive Woo sample products from public catalog
 2. Build active sellable course catalog from Telegram offerings
 3. Enforce checkout required fields: name, email, phone, telegram_id
-4. Activate Woo webhook handoff to Telegram ops chat
+4. [x] Activate Woo webhook handoff to Telegram ops chat (Worker deployed, WP webhook pending)
 5. Standardize order note lifecycle:
    - `ADD_TO_TELEGRAM_PENDING`
    - `Telegram Access Granted`
@@ -25,7 +25,7 @@ Mirror Telegram operations into WordPress reliably, monetize courses through Woo
 4. One small site improvement logged per import cycle
 
 ## Phase 3 — Automation Hardening
-1. Worker endpoint (Cloudflare or equivalent runtime)
+1. [x] Worker endpoint — Cloudflare Worker `prefrontal-woo-handoff` deployed
 2. Signed webhook validation (HMAC)
 3. Retry + idempotency + dead-letter logging
 4. Daily reconciliation job (orders vs telegram grants)
